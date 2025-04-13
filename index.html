@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Undangan Pernikahan</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    
+    <div class="section fade-in">
+      <h1>Wedding Invitation</h1>
+      <p>Hilwa & Arief</p>
+      <img src="img1.jpeg" alt="Wedding art">
+    </div>
+
+    <div class="section fade-in">
+      <h2>Kami Mengundang</h2>
+      <p>Dengan segala hormat, kami mengundang Bapak/Ibu/Saudara/i ke acara pernikahan kami yang insyaAllah akan dilaksanakan dengan penuh kebahagiaan dan syukur.</p>
+    </div>
+
+    <div class="section fade-in">
+      <h2>Hilwa & Arief</h2>
+      <p>Dengan penuh cinta dan restu keluarga, kami akan melangsungkan pernikahan dan memulai perjalanan baru bersama.</p>
+    </div>
+
+    <div class="section fade-in">
+      <h2>Waktu & Tempat</h2>
+      <p>Sabtu, 24 Mei 2025<br> Masjid Raya Baiturrahman><br>Banda Aceh
+      
+      </p>
+      <p>Ahad, 25 Mei 2025<br>Beulangong Raja<br>Jl. Banda Aceh - Meulaboh</p>
+    </div>
+
+    <div class="section fade-in">
+      <h2>Hitung Mundur</h2>
+      <div class="countdown" id="countdown">
+        <div><span id="days">--</span><br>Hari</div>
+        <div><span id="hours">--</span><br>Jam</div>
+        <div><span id="minutes">--</span><br>Menit</div>
+        <div><span id="seconds">--</span><br>Detik</div>
+      </div>
+    </div>
+
+    <div class="section fade-in">
+      <h2>RSVP</h2>
+      <p>Silakan konfirmasi kehadiran Anda melalui tombol di bawah ini:</p>
+      <p><a href="#" style="text-decoration: none; background: #007bff; color: white; padding: 10px 20px; border-radius: 8px;">Konfirmasi Kehadiran</a></p>
+    </div>
+
+    <div class="footer">
+      &copy; 2025 Hilwa & Arief Wedding Invitation By<br> ThomasPunk Studio
+    </div>
+
+  </div>
+
+  <script>
+    // Fade-in scroll effect
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, {
+      threshold: 0.15
+    });
+
+    document.querySelectorAll('.fade-in').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Countdown Timer
+    const targetDate = new Date("2025-05-25T10:00:00").getTime();
+
+    const countdown = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      if (distance <= 0) {
+        clearInterval(countdown);
+        document.getElementById("countdown").innerHTML = "<p>Acara telah dimulai!</p>";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("days").textContent = days;
+      document.getElementById("hours").textContent = hours;
+      document.getElementById("minutes").textContent = minutes;
+      document.getElementById("seconds").textContent = seconds;
+    }, 1000);
+  </script>
+
+</body>
+</html>
