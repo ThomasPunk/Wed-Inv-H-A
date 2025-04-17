@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Undangan Pernikahan</title>
+  <title>Wedding Invitation Hilwa & Arief</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,6 +14,8 @@
       <h1>Wedding Invitation</h1>
       <p>Hilwa & Arief</p>
       <img src="img1.jpeg" alt="Wedding art">
+      <p>Kepada</p>
+      <h2 class="textScene0"><span id="nama"></span></h2>
     </div>
 
     <div class="section fade-in">
@@ -50,7 +52,7 @@
       <p><a href="#" style="text-decoration: none; background: #007bff; color: white; padding: 10px 20px; border-radius: 8px;">Konfirmasi Kehadiran</a></p>
     </div>
 
-    <div class="footer">
+    <div class="footer" href="https://www.instagram.com/thomaspunk.studio">
       &copy; 2025 Hilwa & Arief Wedding Invitation By<br> ThomasPunk Studio
     </div>
 
@@ -63,9 +65,12 @@
         if (entry.isIntersecting) {
           entry.target.classList.add('show');
         }
+        else {
+          entry.target.classList.remove('show');
+        }
       });
     }, {
-      threshold: 0.15
+      threshold: 0.20
     });
 
     document.querySelectorAll('.fade-in').forEach(el => {
@@ -95,6 +100,17 @@
       document.getElementById("minutes").textContent = minutes;
       document.getElementById("seconds").textContent = seconds;
     }, 1000);
+
+    // Ambil parameter dari URL
+    const params = new URLSearchParams(window.location.search);
+    const nama = params.get("nama");
+
+    // Jika ada nilai, tampilkan di halaman
+    if (nama) {
+      document.getElementById("nama").textContent = nama;
+    } else {
+      document.getElementById("nama").textContent = "Guest";
+    }
   </script>
 
 </body>
