@@ -92,3 +92,31 @@ for (let i = 0; i < data.length; i += 3) {
 }
 })
 .catch(error => console.error('Error:', error));
+
+// Untuk pengaturan Copy Nomor rekening
+function copyRekening(text) {
+  navigator.clipboard.writeText(text).then(() => {
+    const notif = document.getElementById('notif');
+    notif.style.display = 'inline';
+    setTimeout(() => notif.style.display = 'none', 1500);
+  });
+}
+
+// untuk pengaturan display hadiah
+let display = 1;
+function displayHadiah() {
+  const weddingGift = document.getElementById('weddingGift');
+  const atmCard = document.getElementById('atmCard');
+  const hadiah = document.getElementById('hadiah');
+  if (display > 0) {
+    display= -1;
+    weddingGift.classList.add("display");
+    atmCard.classList.add("display");
+    hadiah.classList.add("display");
+  } else {
+    display = 1;
+    weddingGift.classList.remove("display");
+    atmCard.classList.remove("display");
+    hadiah.classList.remove("display");
+  }
+}

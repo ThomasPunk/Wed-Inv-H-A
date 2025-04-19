@@ -1,8 +1,9 @@
 :root {
-  --primary-color: rgb(128, 128, 128);
-  /* #FFFAEB; */
+  --primary-color: 
+  /* grey; */
+  #FFFAEB;
   --secondary-color: #333;
-  --tertiary-color: #f0f0f0;
+  --tertiary-color: #ffffff;
 }
 
 body {
@@ -47,7 +48,7 @@ body {
   background: transparent; 
 }
 .section:nth-child(2) p{
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   text-align: center;
   margin: 0px 5vw 0px 5vw;
 }
@@ -68,23 +69,6 @@ p {
   line-height: 1.6;
 }
 
-.countdown {
-  display: flex;
-  justify-content: center;
-  gap: 0px;
-  margin-top: 20px;
-  flex-wrap: wrap;
-}
-
-.countdown div {
-  background: #f0f0f0;
-  border-radius: 10px;
-  text-align: center;
-  font-weight: bold;
-  font-size: 1.3rem;
-  min-width: 80px;
-}
-
 .footer {
   text-align: center;
   margin-top: 100px;
@@ -94,7 +78,7 @@ p {
 
 /* Pengaturan khusus untuk gambar Section no.1 */
 .section:nth-child(1) img{
-  width: 80vw;  
+  height: 46vh;  
 }
 
 /* Pengaturan khusus untuk Section no.3 */
@@ -146,6 +130,298 @@ div.inCard{
   letter-spacing: .1rem;
   margin-bottom: 0;
 }
-.textParent{
+.section:nth-child(3) p{
   font-size: .8rem;
+  width: 90vw;
+}
+
+/* pengaturan Section 4 */
+.section:nth-child(4) {
+  background: transparent;
+}
+.savethe-date{
+  background-color: var(--tertiary-color);
+  border-radius: 25vw;
+  width: 80vw;
+  padding-top: 30px;
+  padding-bottom: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.savethe-date h3{
+  font-size: 1.3rem;
+  font-weight: lighter;
+  font-style: italic;
+  letter-spacing: .1rem;
+  margin-bottom: 0;
+  text-align: center;
+}
+.savethe-date h3::before{
+  content: "";      /*letakkan garis dipinggir akad dan resepsi*/
+  display: inline-block;
+  width: 50px;
+  height: .5px;
+  background: black;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+.savethe-date h3::after{
+  content: "";
+  display: inline-block;
+  width: 50px;
+  height: .5px;
+  background: var(--secondary-color);
+  margin-right: 10px;
+  vertical-align: middle;
+}
+.resepsi{
+  padding-top: 30px;
+}
+.location{
+  background: var(--primary-color);
+  border-radius: 1rem;
+  width: auto;
+  padding: 4px 20px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  box-shadow: inset 0 3px 10px rgba(225, 225, 225, .2), inset 0 -3px 10px rgba(0, 0, 0, .2); 
+}
+.location img{
+  align-self: center ;
+}
+.location:hover{
+  background: var(--secondary-color);
+  color: var(--tertiary-color);
+  transition: all .3s ease;
+}
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+  border-bottom: var(--primary-color) .5px solid;
+  padding-bottom: 25px;
+  overflow: visible;
+  width: 50vw;
+}
+.countdown div {
+  background: transparent;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: initial;
+  font-size: 1.05rem;
+  width: 80px;
+}
+
+
+/* pengaturan section 5 */
+.section:nth-child(5) {
+  height: 55vh;
+  justify-content: flex-start;
+}
+.slider{
+  width: 100%;
+  height: var(--height);
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 15%  85%,
+    transparent
+  );
+  padding-top: 20px;
+}
+.slider .gallery{
+  display: flex;
+  width: 100%;
+  position: relative;
+}
+.slider .gallery .item{
+  width: var(--width);
+  height: var(--height);
+  position: absolute;
+  top: calc(var(--height)/2);
+  left: 100vw;
+  animation: autoRun 30s linear infinite;
+  animation-delay: calc(30s/630 *var(--position) ); 
+}
+.slider .gallery .item img{
+  width: var(--width);
+}
+@keyframes autoRun {
+  from {
+    transform:translateX(100vw) translateY(-50%); 
+  }
+  to{
+    transform: translateX(calc(var(--width)*-9) ) translateY(-50%);
+  }
+}
+.slider:hover .item{
+  animation-play-state: paused!important;
+}
+
+/* pengaturan untuk section 6 */
+.section:nth-child(6){
+  height: 35vh;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  overflow: hidden;
+  transition: height 0.8s ease-in-out;
+}
+.section:nth-child(6).display{
+  height: 100vh;
+}
+.atmCard{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: rgb(229, 255, 228);
+  border: #0b878b 1.5px solid;
+  width: 70vw;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 20px;
+ }
+.bsi {
+  width: 50px;
+  align-self: flex-end;
+}
+.copy{
+  font-size: 0.9rem;
+  background-color: rgba(255, 255, 255, 0.199);
+  text-align: center;
+  align-self: flex-end;
+  border: #33333394 1px solid;
+  border-radius: 5px;
+  padding: 4px;
+}
+.copy img{
+  height: 0.9rem;
+}
+.copy::after{
+  content: 'Copy';
+}
+.copy:active::after{ 
+  content: 'Tersalin!';
+  transition: all 1.2s ease;
+  color: #333;
+}
+.hadiah{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: #0b878b 1.5px solid;
+  border-radius: 20px;
+  padding: 10px;
+  width: 70vw;
+  background-color: rgb(229, 255, 228);
+  font-size: .9rem;
+  text-align: center;
+}
+.hadiah span{
+  font-size: 0.5rem;
+}
+.atmCard, .hadiah{
+  opacity: 0;
+  scale: 0.8;
+  transition: all 0.5s ease-in-out 0.5s;
+}
+.atmCard.display, .hadiah.display{
+  opacity: 1;
+  scale: 1;
+}
+
+/* setting untuk section 7 */
+.section:nth-child(7) {
+  background: transparent;
+}
+form{
+  margin-top: 30px;
+  line-height: 1.6em;
+  text-align: left;
+  font-size: 1rem;
+  width: 82vw;
+}
+input{
+  background-color: var(--tertiary-color);
+  border: black 0.1px solid;
+  border-radius: 10px;
+  transition: all 0.8s ease-in-out;
+  padding-bottom: 3px;
+}
+input[name="entry.206889230"]:focus{
+  width: 82vw;
+  border-color: aquamarine;
+}
+input[name="entry.206889230"]{
+  width: 35vw;
+  margin-bottom: 10px;
+  height: 1.1rem;
+}
+input[name="entry.219318329"]:focus{
+  width: 82vw;
+  height: 9rem;
+  border-color: aquamarine;
+}
+input[name="entry.219318329"]{
+  width: 60vw;
+  height: 3rem;
+  margin-top: 10px;
+}
+
+input::placeholder{
+  color: rgb(145, 145, 145);
+  font-size: 1rem;
+  padding-left: 5px;
+}
+input:focus{
+  outline: none;
+  border-bottom: 0.1px solid rgb(160, 75, 14);  
+}
+input:focus::placeholder{
+  color: rgba(145, 145, 145, 0.2);
+}
+input[type="radio"] {
+    margin-right: 10px;
+    accent-color: #007BFF; /* Warna radio button modern */
+    transform: scale(1.2); /* Membesarkan tombol */
+    margin-bottom: 0px;
+  }
+
+button{
+  font-size: 1rem;
+  margin-top: 20px;
+  border: 0.2px solid var(--secondary-color);
+  border-radius: 4px;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5)inset, 0px -3px 10px rgba(0, 0, 0, 0.5) inset;
+}
+button:hover{
+  color: grey;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
+}
+#thankYouMsg{
+  top: 50vh;
+  left: 8vw; 
+  color: green; 
+  font-weight: bold;
+}
+
+#data-container {
+  top: 50vh;
+  left: 8vw;
+  width: 82vw;
+  max-height: 35vh; /* batas tinggi */
+  overflow-y: auto; /* scroll kalau lewat */;
+  padding: 10px;
+  scrollbar-width: 1px;
+}
+.data-block {
+  border-bottom: 0.3px solid #999;
+  padding-bottom: 0px;
 }
