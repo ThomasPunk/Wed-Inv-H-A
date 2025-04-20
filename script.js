@@ -7,7 +7,7 @@ entries.forEach(entry => {
 
 });
 }, {
-threshold: 0.05
+threshold: 0.11
 });
 
 fadeInElements.forEach(fadeInElement => {
@@ -120,3 +120,14 @@ function displayHadiah() {
     hadiah.classList.remove("display");
   }
 }
+
+//buat class untuk click openpage()
+const openingPage = document.getElementById('openingPage');
+const container = document.getElementById('container');
+
+function openPage(){
+  openingPage.classList.add('hidden');
+  container.classList.remove('hidden');  
+  const audio = document.getElementById("soundTrack");
+    audio.play();
+} 
