@@ -64,6 +64,7 @@ body {
   border-radius: 1rem;
   width: auto;
   margin-top: 30px;
+  margin-bottom: 50px;
   padding: 4px 20px;
   height: auto;
   display: flex;
@@ -158,9 +159,20 @@ p {
 }
 
 /* Pengaturan khusus untuk gambar Section no.1 */
-.section:nth-child(1) img{
-  height: 46vh;  
+/* .section:nth-child(1) img{
+  height: 46vh;
+  opacity: 1;  
+} */
+.backDrop{
+  position: absolute;
+  z-index: -1;
+  width: 100vw;
+  opacity: .2;
+  left :10vw;
+  top: 0vh;
+  scale: 0.8;
 }
+
 
 /* Pengaturan khusus untuk Section no.3 */
 .card{
@@ -203,6 +215,7 @@ div.inCard{
   margin-top: 10px;
   position: absolute;
   bottom: 5px;
+  z-index: 2;
 }
 .section:nth-child(3) h2{
   font-size: 1.3rem;
@@ -302,7 +315,7 @@ div.inCard{
 
 /* pengaturan section 5 */
 .section:nth-child(5) {
-  height: 55vh;
+  height: calc(var(--height) + 20vh);
   justify-content: flex-start;
 }
 .slider{
@@ -323,8 +336,8 @@ div.inCard{
   position: relative;
 }
 .slider .gallery .item{
-  width: var(--width);
-  height: var(--height);
+  max-width: var(--width);
+  max-height: var(--height);
   position: absolute;
   top: calc(var(--height)/2);
   left: 100vw;
@@ -332,7 +345,8 @@ div.inCard{
   animation-delay: calc(30s/630 *var(--position) ); 
 }
 .slider .gallery .item img{
-  width: var(--width);
+  max-width: var(--width);
+  max-height: var(--height);
 }
 @keyframes autoRun {
   from {
@@ -354,9 +368,15 @@ div.inCard{
   align-items: center;
   overflow: hidden;
   transition: height 0.8s ease-in-out;
+  margin: 0px 5vw;
+  font-size: 1rem;
 }
 .section:nth-child(6).display{
   height: 100vh;
+}
+.section:nth-child(6) p{
+  font-size: 0.9rem;
+  text-align: center;
 }
 .atmCard{
   display: flex;
