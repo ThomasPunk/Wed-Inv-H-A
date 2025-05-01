@@ -1,13 +1,12 @@
 // Fade-in scroll effect
 const fadeInElements = document.querySelectorAll('.fade-in');
-
 const observer = new IntersectionObserver(entries => {
 entries.forEach(entry => {
     entry.target.classList.toggle('show',entry.isIntersecting);
 
 });
 }, {
-threshold: 0.11
+threshold: 0.2
 });
 
 fadeInElements.forEach(fadeInElement => {
@@ -51,8 +50,22 @@ document.getElementById("seconds").textContent = seconds;
 }, 1000);
 
 // Ambil parameter dari URL
+function escapeHTML(text) {
+  return text.replace(/[&<>"']/g, function (m) {
+    return {
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#039;'
+    }[m];
+  });
+}
+
+document.addEventListener("DOMContentLoaded", function () {
 const params = new URLSearchParams(window.location.search);
-const nama = params.get("nama");
+const nama = escapeHTML(params.get("nama"));
+
 
 // Jika ada nilai, tampilkan di halaman
 if (nama) {
@@ -60,7 +73,7 @@ document.getElementById("nama").textContent = nama;
 } else {
 document.getElementById("nama").textContent = "Guest";
 }
-
+});
 // Fungsi untuk menampilkan pesan terima kasih
 // setelah form dikirim
 function showThankYouMessage() {
