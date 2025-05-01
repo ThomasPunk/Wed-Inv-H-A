@@ -85,36 +85,36 @@
   <div class="section fade-in">
     <h2>Our<br>Gallery</h2>
     <div class="slider" style="
-    --height: 50vh; ">
-      <div class="gallery">
-        <div class="item" style="--position: 0; --width: 70vw;">
-          <img src="img1.jpeg" alt="Gallery Image 1">
+    --height: 50vh; " onclick="gallery()">
+      <!-- <div class="gallery"> -->
+        <div class="item" style="--position: 0; --width: 37.5vh;">
+          <img src="img11.jpg" alt="Gallery Image 1" loading="lazy">
         </div>
-        <div class="item" style="--position: 70;--width: 70vw;">
+        <div class="item" style="--position: 39.5;--width: 50vh;">
           <img src="img1.jpeg" alt="Gallery Image 2">
         </div>
-        <div class="item" style="--position: 140;--width:70vw;">
+        <div class="item" style="--position: 91.5;--width: 50vh;">
           <img src="img1.jpeg" alt="Gallery Image 3">
         </div>
-        <div class="item" style="--position: 210;--width:70vw;">
+        <!-- <div class="item" style="--position: 210s;--width:50vh;">
           <img src="img1.jpeg" alt="Gallery Image 4">
         </div>
-        <div class="item" style="--position: 280;--width:70vw;">
+        <div class="item" style="--position: 280s;--width:50vh;">
           <img src="img1.jpeg" alt="Gallery Image 5">
         </div>
-        <div class="item" style="--position: 350;--width:70vw;">
+        <div class="item" style="--position: 350s;--width:50vh;">
           <img src="img1.jpeg" alt="Gallery Image 6">
         </div>
-        <div class="item" style="--position: 420;--width:70vw;">
+        <div class="item" style="--position: 420s;--width:50vh;">
           <img src="img1.jpeg" alt="Gallery Image 7">
         </div>
-        <div class="item" style="--position: 490;--width:70vw;">
+        <div class="item" style="--position: 490s;--width:50vh;">
           <img src="img1.jpeg" alt="Gallery Image 8">
         </div>
-        <div class="item" style="--position: 560;--width:70vw;">
+        <div class="item" style="--position: 560s;--width:50vh;">
           <img src="img1.jpeg" alt="Gallery Image 9">
-        </div>
-      </div>
+        </div> -->
+      <!-- </div> -->
     </div>  
   </div>
 
@@ -156,18 +156,23 @@
     <label for="Tidak, Kita Akan berjumpa dilain waktu"> Tidak, Kita Akan berjumpa dilain waktu</label><br>
 
     <!-- Form Ucapan Selamat -->
-    <input type="text" name="entry.219318329" placeholder="Ucapan"><br>
+    <textarea type="text" name="entry.219318329" placeholder="Ucapan"></textarea><br>
     
     <!-- Tombol Submit -->
     <button type="submit">Kirim</button>
     </Form>
 
-    <div class="textScene6" id="thankYouMsg" ></div>
     <iframe name="hiddenConfirm" style="display:none;"></iframe>
     
     <!-- untuk menampilkan ucapan yang sudah masuk -->
+    <div class="kehadiran">
+      <div id="attended">Hadir <br><span id="spanAttended"></span></div>
+      <div id="notAttended">Tidak Hadir <br><span id="spanNotAttended"></span></div>
+    </div>
     <div id="data-container"></div>
   </div>
+  
+  <div class="textScene6" id="thankYouMsg" >Terima kasih atas kehadiran dan ucapannya!</div>
 
   <div class="section fade-in">
     <h2>Terima Kasih</h2>
@@ -180,8 +185,37 @@
   </div>
 
 </div>
-<audio id="soundTrack" src="lagu2.mp3" loop></audio>
-  <script src="script.js"></script>
-    
+<div class="blur"></div>
+<div class="galleryClick" onclick="gallery()">
+  <div class="itemClick">
+    <img src="img11.jpg" alt="Gallery Image 1" loading="lazy">
+  </div>
+  <div class="itemClick" style="--position: 39.5;--width: 50vh;">
+    <img src="img1.jpeg" alt="Gallery Image 2">
+  </div>
+  <div class="itemClick" style="--position: 91.5;--width: 50vh;">
+    <img src="img1.jpeg" alt="Gallery Image 3">
+  </div>
+  <!-- <div class="item" style="--position: 210s;--width:50vh;">
+    <img src="img1.jpeg" alt="Gallery Image 4">
+  </div>
+  <div class="item" style="--position: 280s;--width:50vh;">
+    <img src="img1.jpeg" alt="Gallery Image 5">
+  </div>
+  <div class="item" style="--position: 350s;--width:50vh;">
+    <img src="img1.jpeg" alt="Gallery Image 6">
+  </div>
+  <div class="item" style="--position: 420s;--width:50vh;">
+    <img src="img1.jpeg" alt="Gallery Image 7">
+  </div>
+  <div class="item" style="--position: 490s;--width:50vh;">
+    <img src="img1.jpeg" alt="Gallery Image 8">
+  </div>
+  <div class="item" style="--position: 560s;--width:50vh;">
+    <img src="img1.jpeg" alt="Gallery Image 9">
+  </div> -->
+</div>    
+<audio id="soundTrack" src="lagu.mp3" loop></audio>
+<script src="script.js"></script>
 </body>
 </html>

@@ -66,32 +66,74 @@ document.getElementById("nama").textContent = "Guest";
 function showThankYouMessage() {
 // Tunggu sedikit supaya Google Forms menerima submit dulu
 setTimeout(() => {
-document.getElementById('thankYouMsg').textContent = "Terima kasih atas kehadiran dan ucapannya!";
+document.getElementById('thankYouMsg').classList.add('peek');
 document.getElementById('weddingForm').reset(); // Kosongkan form setelah submit
 }, 300);
-
-return true; // Tetap kirim form ke Google Form
+setTimeout(() => {
+document.getElementById('thankYouMsg').classList.remove('peek');
+}, 3500);
+  return true; // Tetap kirim form ke Google Form
 }
 
 // Ambil data dari Google Sheets
-fetch('https://script.google.com/macros/s/AKfycbwU-8A9KtDovvMMTyzNOAa4LaTmmGDfdDfr_hKdepGt4wCIBm9KxwhQ-bFf3AKQxLfG/exec') //URL dapat dati App Sript Google
-.then(response => response.json())
-.then(data => {
-const container = document.getElementById('data-container');
-for (let i = 0; i < data.length; i += 3) {
-    const block = document.createElement('div');
-    block.className = 'data-block';
+fetch('https://script.google.com/macros/s/AKfycbwU-8A9KtDovvMMTyzNOAa4LaTmmGDfdDfr_hKdepGt4wCIBm9KxwhQ-bFf3AKQxLfG/exec')
+  .then(response => response.json())
+  .then(data => {
+    const container = document.getElementById('data-container');
+    let attended = 0;
+    let  notAttended= 0;
+    for (let i = 0; i < data.length; i += 4) {
+      const block = document.createElement('div');
+      block.className = 'data-block';
+      
 
-    block.innerHTML = `
-    <p>${data[i]}</p>
-    <p>${data[i+1]}</p>
-    <p>${data[i+2]}</p>
-    `;
+      // Ambil timestamp dan konversi
+      const timestamp = new Date(data[i + 2]);
+      const now = new Date();
+      const diffMs = now - timestamp;
 
-    container.appendChild(block);
-}
-})
-.catch(error => console.error('Error:', error));
+      const diffSec = Math.floor(diffMs / 1000);
+      const diffMin = Math.floor(diffSec / 60);
+      const diffHr = Math.floor(diffMin / 60);
+      const diffDay = Math.floor(diffHr / 24);
+
+      const sisaJam = diffHr % 24;
+      const sisaMenit = diffMin % 60;
+
+      let waktuKalimat = "";
+      if (diffDay > 0) waktuKalimat += `${diffDay} hari `;
+      if (sisaJam > 0) waktuKalimat += `${sisaJam} jam `;
+      if (diffDay === 0 && sisaJam === 0) waktuKalimat += `${sisaMenit} menit `;
+      waktuKalimat += "lalu";
+
+      //menghitung kehadiran
+      const absent = data[i + 3];
+      if (typeof absent === 'string' && absent.toLowerCase().includes('ya')) {
+        attended++;
+      }else if (typeof absent === 'string' && absent.toLowerCase().includes('tidak')) {
+        notAttended++;
+      }
+      document.getElementById('spanAttended').textContent = attended;
+      document.getElementById('spanNotAttended').textContent = notAttended;
+      //membuat elemen HTML untuk menampilkan data
+      block.innerHTML = `
+        <p>${data[i]}</p>
+        <p>${data[i + 1]}</p>
+        <p>${waktuKalimat}</p>
+      `;
+
+      container.appendChild(block);
+
+      console.log("Jumlah yang hadir: " + attended);
+      console.log("Jumlah yang tidak hadir: " + notAttended);
+      console.log("data 3 :" + absent )
+      
+    }
+  })
+  .catch(error => console.error('Error:', error));
+  
+
+;
 
 // Untuk pengaturan Copy Nomor rekening
 function copyRekening(text) {
@@ -142,3 +184,14 @@ function openPage(){
   }
 
 } 
+
+//Pengaturan Show Gallery
+  const galleryClick = document.querySelector('.galleryClick');
+  const blur = document.querySelector('.blur');
+
+  function gallery() {
+   
+      galleryClick.classList.toggle('active');
+      blur.classList.toggle('active');
+  
+  }  
