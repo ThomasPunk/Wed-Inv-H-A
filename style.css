@@ -48,6 +48,33 @@ body {
 
 .openingPage h1{
   margin-top: 50px;
+  font-family: "Aboreto", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  /* text-shadow: #333 0px 5px 10px; */
+}
+.openingPage p:nth-child(2){
+  font-size: 1.3rem;
+  font-family: "Arima","Mate", sans-serif;;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  letter-spacing: 2px;
+  /* text-shadow: var(--primary-color) 0px 5px 10px; */
+}
+.openingPage p:nth-child(4){
+  font-size: 1.2rem;
+  font-family: "Aref Ruqaa","Mate", sans-serif;;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+#nama{
+  font-size: 1.5rem;
+  font-family: "Arima","Mate", sans-serif;;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin: 0;
 }
 .openingPhoto{
   display: flex;
@@ -65,7 +92,7 @@ body {
   background: var(--primary-color);
   border-radius: 1rem;
   width: auto;
-  margin-top: 30px;
+  margin-top: 20px;
   margin-bottom: 50px;
   padding: 4px 20px;
   height: auto;
@@ -77,6 +104,7 @@ body {
   box-shadow: inset 0 1px 5px rgba(225, 225, 225, .2), inset 0 -1px 5px rgba(0, 0, 0, .2); 
   transition: all .3s ease;
   cursor: pointer;
+  font-family: "Arima","Mate", sans-serif;;
 }
 .openingPageButton:hover{
   scale: 1.05;
@@ -172,25 +200,23 @@ p {
   opacity: 1;  
 } */
 @media(max-width: 600px) {
-  
 .backDrop{
   position: absolute;
   z-index: -1;
-  width: 100vw;
-  opacity: .15;
-  left :10vw;
-  top: 0vh;
-  scale: 0.8;
-}
-}
-.backDrop{
-  position: absolute;
-  z-index: -1;
-  width: 100vw;
+  max-height: 90rem;
   opacity: .2;
-  left :14vw;
-  top: -96vh;
-  scale: 0.1;
+  left :50%;
+  top: 8%;
+}
+
+}
+.backDrop{
+  position: absolute;
+  z-index: -1;
+  max-height: 8rem;
+  opacity: .2;
+  left :calc(50% + 9.5rem);
+  top: 43%;
 }
 
 /* Pengaturan khusus untuk Section no.3 */
@@ -717,4 +743,12 @@ button:hover{
 @keyframes out {
   0% {opacity: 1; visibility: visible;      }
   100% {opacity: 0; visibility: hidden;      }
+}
+#pausePlay{
+  border: 1px black solid;
+  width: 50px;
+  height: 50px;
+  border-radius: 2.5px;
+  z-index: 7;
+
 }

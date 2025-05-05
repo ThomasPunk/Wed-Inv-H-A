@@ -4,12 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Wedding Invitation Hilwa & Arief</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Aref+Ruqaa:wght@400;700&family=Arima:wght@100..700&family=Mate:ital@0;1&family=Moon+Dance&family=Paprika&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="openingPage" id="openingPage">
   <h1>THE WEDDING OF</h1>
-  <p>HILWA & ARIEF</p>
+  <p>Hilwa & Arief</p>
   <div class="openingPhoto">
   <img src="img1.jpeg" alt="Wedding art">
   </div>
@@ -30,7 +34,7 @@
     <!-- <img src="img1.jpeg" alt="Wedding art">
     <p>Kepada</p>
     <h2 class="textScene0"><span id="nama"></span></h2> -->
-    <img src="img7.svg" alt="Flower Backdrop" class="backDrop">
+    <img src="img7.png" alt="Flower Backdrop" class="backDrop">
   </div>
 
   <div class="section fade-in">
@@ -40,7 +44,7 @@
   </div>
 
   <div class="section fade-in">
-    <p><strong>Asslamu'alaikum Wr.Wb.</strong></p>
+    <p><strong>Assalamu'alaikum Wr.Wb.</strong></p>
     <p>Tanpa mengurangi rasa hormat. <br>Kami mengundang Bapak/Ibu/Sudara/i serta kerabat sekalian untuk menghadiri acara pernikahan kami:</p>
     <div class="card" onclick="window.open('https://www.instagram.com/hilwanadiah/','_blank');">The Bride
       <br><div class="photoCard"><img class="inCard" src="img1.jpeg" alt="Bride">
@@ -125,15 +129,15 @@
       <img src="img3.png" alt="icon gift" style="height: 1.1rem;">
       Klik Disini
     </div>
-    <div class="atmCard" id="atmCard">
+    <!-- <div class="atmCard" id="atmCard">
       <img src="img4.png" alt="icon BSI" class="bsi">
       <br><br>3068099240<br>Hilwa Nadia Helsriyatna
       <br><br>
       <div class="copy" onclick="copyRekening('3068099240')">
         <img src="img5.png" alt="icon Copy">
-        <!-- <span id="notif">Tersalin!</span> -->
+        <span id="notif">Tersalin!</span> 
       </div>
-    </div>
+    </div> -->
       <div class="hadiah" id="hadiah">
         <img src="img3.png" alt="icon Hadiah" style="height: 3rem;">
         <strong>Hadiah</strong><br>Nama Penerima: Arief Nugraha<br>No.HP: 085270656531<br>Alamat: Perumahan Pahu Makmur Estate(Glora), Desa Tanjung Issuy, Kec. Jempang, Kab. Kutai Barat, Kalimantan Timur</p>
@@ -215,6 +219,7 @@
     <img src="img1.jpeg" alt="Gallery Image 9">
   </div> -->
 </div>    
+<button id="pausePlay" onclick="playPause()"></button>
 <audio id="soundTrack" src="lagu.mp3" loop></audio>
 <script src="script.js"></script>
 </body>

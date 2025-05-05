@@ -166,11 +166,12 @@ function displayHadiah() {
 //buat class untuk click openpage()
 const openingPage = document.getElementById('openingPage');
 const container = document.getElementById('container');
+const audio = document.getElementById("soundTrack");
 
 function openPage(){
   openingPage.classList.add('hidden');
   container.classList.remove('hidden');  
-  const audio = document.getElementById("soundTrack");
+  
     audio.play();
 
   let elem = document.documentElement; // atau bisa juga elemen spesifik seperti document.getElementById('container')
@@ -195,3 +196,10 @@ function openPage(){
       blur.classList.toggle('active');
   
   }  
+
+
+  //Pengaturan Unutk Play Pause
+function playPause(){
+  audio.pause();
+
+}
