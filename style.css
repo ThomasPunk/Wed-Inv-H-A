@@ -201,7 +201,7 @@ p {
 
 .footer {
   text-align: center;
-  margin-top: 100px;
+  margin-top: 30px;
   color: #aaa;
   font-size: 0.9rem;
   padding-bottom: 10px;
@@ -228,7 +228,7 @@ p {
   z-index: -1;
   max-height: 8rem;
   opacity: .2;
-  left :calc(50% + 9.5rem);
+  left :calc(50% + 9rem);
   top: 43%;
 }
 
@@ -442,7 +442,7 @@ div.inCard{
 }
 
 /* pengaturan untuk section 6 */
-.section:nth-child(6){
+/* .section:nth-child(6){
   height: 35vh;
   flex-wrap: nowrap;
   flex-direction: column;
@@ -455,7 +455,7 @@ div.inCard{
   font-size: 1rem;
   gap: 20px;
   
-}
+} 
 .section:nth-child(6).display{
   height: 80vh;
 }
@@ -517,7 +517,8 @@ div.inCard{
 .hadiah span{
   font-size: 0.5rem;
 }
-.atmCard, .hadiah{
+/* .atmCard,  
+.hadiah{
   opacity: 0;
   scale: 0.8;
   visibility: hidden ;
@@ -525,14 +526,15 @@ div.inCard{
    
   
 }
-.atmCard.display, .hadiah.display{
+/* .atmCard.display,  
+.hadiah.display{
   opacity: 1;
   scale: 1;
   visibility: visible;
-}
+}*/
 
 /* setting untuk section 7 */
-.section:nth-child(7) {
+#greetings {
   background: transparent;
   display: block;
 }
@@ -618,14 +620,15 @@ button{
   padding: 5px 10px;
   border: 0.2px solid var(--secondary-color);
   border-radius: 4px;
-  box-shadow: inset 0 1px 5px rgba(225, 225, 225, .2), inset 0 -1px 5px rgba(0, 0, 0, .2);
+  box-shadow: inset 0 1px 5px rgba(255, 255, 255, 0.2), inset 0 -1px 5px rgba(255, 255, 255, 0.2);
   background: var(--tertiary-color);
-  transition: all .7 ease-in-out;
+  transition: all .3s ease-in-out;
+  cursor: pointer;
 }
 button:hover{
   color: grey;
-  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
-  scale: 1.1;
+  box-shadow: 0px 0px 8px rgba(255, 255, 255, 0.5);
+  scale: 1.02;
 }
 button:active{
   scale: .9;
@@ -766,6 +769,55 @@ button:active{
   100% {opacity: 0; visibility: hidden;      }
 }
 
+/* Pengaturan untuk section "Terima Kasih */
+#thankYou{
+  height: 40vh;
+  justify-content: flex-start;
+  margin-bottom: 30px;
+  padding-bottom: 5px;
+}
+
+#thankYou p:nth-child(4){
+  font-size: .6rem;
+  font-family: "Arima","Mate", sans-serif;;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-top: auto;
+  
+}
+#thankYou span{
+  color: skyblue;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*pengaturan simbol play pause lagu*/
 #pausePlay{
   position: fixed;
@@ -776,18 +828,7 @@ button:active{
   z-index: 7;
   right: 5px;
   top: 60vh;
-  opacity: 0.2;
   background: var(--primary-color);
-}
-.paused{
-  animation: unSee 3s linear .5s;
-}
-.played{
-  animation: unSee 3s linear .5s;
-}
-@keyframes unSee{
-  from{opacity: 1;}
-  to{ opacity: .2;}
 }
 .play{
   position: absolute;
@@ -816,7 +857,6 @@ button:active{
   left: 50%;
   top: 50%;
   transform: translate(-50%,-50%);
-  opacity : 0.3;
 }
 .pause::before,
 .pause::after {
@@ -835,4 +875,18 @@ button:active{
 }
 .paused .pause{
   visibility: hidden;
+}
+#pausePlay.paused{
+  animation: unSee 2s forwards linear ;
+}
+#pausePlay.played{
+  animation: unSee2 2s forwards linear;
+}
+@keyframes unSee{
+  from{ opacity: 1;}
+  to{ opacity: .3;}
+}
+@keyframes unSee2{
+  from{ opacity: 1;}
+  to{ opacity: .3;}
 }
