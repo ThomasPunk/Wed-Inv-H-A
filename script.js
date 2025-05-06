@@ -167,12 +167,14 @@ function displayHadiah() {
 const openingPage = document.getElementById('openingPage');
 const container = document.getElementById('container');
 const audio = document.getElementById("soundTrack");
+const pausePlay = document.getElementById("pausePlay");
 
 function openPage(){
   openingPage.classList.add('hidden');
   container.classList.remove('hidden');  
   
     audio.play();
+    pausePlay.classList.toggle('played')
 
   let elem = document.documentElement; // atau bisa juga elemen spesifik seperti document.getElementById('container')
   
@@ -200,6 +202,11 @@ function openPage(){
 
   //Pengaturan Unutk Play Pause
 function playPause(){
+  if (audio.paused) {
+  audio.play();
+  } else {
   audio.pause();
-
+  }
+  pausePlay.classList.toggle('paused')
+  pausePlay.classList.toggle('played')
 }

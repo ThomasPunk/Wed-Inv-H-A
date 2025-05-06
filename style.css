@@ -64,7 +64,7 @@ body {
 .openingPage p:nth-child(4){
   font-size: 1.2rem;
   font-family: "Aref Ruqaa","Mate", sans-serif;;
-  font-weight: 400;
+  font-weight: 300;
   letter-spacing: 1px;
   margin-top: 20px;
   margin-bottom: 5px;
@@ -158,9 +158,20 @@ body {
   padding: 0;
   height: 100vh;
   transform: translateY(0);
-  
 }
-
+.section:nth-child(1) h1{
+  font-family: "Aboreto",Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: 200;
+  font-size: 1.8rem;
+  margin-top:30px;
+  padding:0;
+}
+.section:nth-child(1) p{
+    font-family: "Moon Dance",Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 2rem;
+    margin: 0;
+    padding: 0;
+}
 /* pengaturan untuk section 2 */
 .section:nth-child(2) {
   background: transparent; 
@@ -185,6 +196,7 @@ p {
   text-align: center;
   font-size: 1.1rem;
   line-height: 1.6;
+  font-family: "Arima",Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .footer {
@@ -192,6 +204,7 @@ p {
   margin-top: 100px;
   color: #aaa;
   font-size: 0.9rem;
+  padding-bottom: 10px;
 }
 
 /* Pengaturan khusus untuk gambar Section no.1 */
@@ -299,6 +312,9 @@ div.inCard{
   margin-bottom: 0;
   text-align: center;
 }
+.savethe-date p{
+  font-size: 1rem;
+}
 .savethe-date h3::before{
   content: "";      /*letakkan garis dipinggir akad dan resepsi*/
   display: inline-block;
@@ -355,6 +371,7 @@ div.inCard{
   padding-bottom: 25px;
   overflow: visible;
   width: 50vw;
+  font-family: "Arima","Aref Ruqaa","Aboreto",Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 .countdown div {
   background: transparent;
@@ -595,7 +612,6 @@ label{
   font-size: 1rem;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-
 button{
   font-size: 1.1rem;
   margin-top: 20px;
@@ -603,10 +619,16 @@ button{
   border: 0.2px solid var(--secondary-color);
   border-radius: 4px;
   box-shadow: inset 0 1px 5px rgba(225, 225, 225, .2), inset 0 -1px 5px rgba(0, 0, 0, .2);
+  background: var(--tertiary-color);
+  transition: all .7 ease-in-out;
 }
 button:hover{
   color: grey;
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
+  scale: 1.1;
+}
+button:active{
+  scale: .9;
 }
 #thankYouMsg{
   position: fixed;
@@ -622,9 +644,8 @@ button:hover{
   box-shadow: inset 0 1px 5px rgba(225, 225, 225, .2), inset 0 -1px 5px rgba(0, 0, 0, .2);
 }
 #thankYouMsg.peek {
-  right: 8vw;
+  right: 4vw;
 }
-
 #data-container {
   position: relative;
   display: block;
@@ -744,11 +765,74 @@ button:hover{
   0% {opacity: 1; visibility: visible;      }
   100% {opacity: 0; visibility: hidden;      }
 }
-#pausePlay{
-  border: 1px black solid;
-  width: 50px;
-  height: 50px;
-  border-radius: 2.5px;
-  z-index: 7;
 
+/*pengaturan simbol play pause lagu*/
+#pausePlay{
+  position: fixed;
+  border: 1px black solid;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  z-index: 7;
+  right: 5px;
+  top: 60vh;
+  opacity: 0.2;
+  background: var(--primary-color);
+}
+.paused{
+  animation: unSee 3s linear .5s;
+}
+.played{
+  animation: unSee 3s linear .5s;
+}
+@keyframes unSee{
+  from{opacity: 1;}
+  to{ opacity: .2;}
+}
+.play{
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 10px solid black; /* Warna segitiga */
+  cursor: pointer;
+  padding: 0;
+  visibility: hidden;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+.paused .play{
+  visibility: visible;
+}
+.pause {
+  width: 5px;
+  height: 10px;
+  background: black;
+  visibility: visible;
+  position: absolute;
+  padding: 0;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  opacity : 0.3;
+}
+.pause::before,
+.pause::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 10px;
+  background: var(--primary-color);
+  top: 0;
+}
+.pause::before {
+   left: 2px;
+ }
+.pause::after {
+    right: 2px;
+}
+.paused .pause{
+  visibility: hidden;
 }
