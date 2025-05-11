@@ -696,6 +696,9 @@ button:active{
   margin-left: 10px;
   line-height: 1.5rem;
 }
+.data-block p:nth-child(1){
+  font-weight: bolder;
+}
 .data-block p:nth-child(3){
   font-size: .7rem;
   font-weight: bolder;
@@ -815,7 +818,7 @@ button:active{
   height: 40vh;
   justify-content: flex-start;
   margin-bottom: 30px;
-  padding-bottom: 5px;
+  padding: 0px 10Px 5px 10px;
 }
 
 #thankYou p:nth-child(4){
