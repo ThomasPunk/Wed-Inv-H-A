@@ -210,3 +210,33 @@ function playPause(){
   pausePlay.classList.toggle('paused')
   pausePlay.classList.toggle('played')
 }
+
+//Pengaturan untuk Validasi Form hanya submit jika sudah terisi semua baris
+  const form = document.getElementById('weddingForm');
+  const nameInput = form.querySelector('input[name="entry.206889230"]');
+  const radios = form.querySelectorAll('input[name="entry.1617194257"]');
+  const messageInput = form.querySelector('textarea[name="entry.219318329"]');
+  const submitBtn = form.querySelector('button[type="submit"]');
+
+  function isRadioChecked() {
+    return Array.from(radios).some(radio => radio.checked);
+  }
+
+  function validateForm() {
+    if (nameInput.value.trim() && isRadioChecked() && messageInput.value.trim()) {
+      submitBtn.disabled = false;
+    } else {
+      submitBtn.disabled = true;
+    }
+  }
+
+  // Event listeners
+  nameInput.addEventListener('input', validateForm);
+  messageInput.addEventListener('input', validateForm);
+  radios.forEach(radio => radio.addEventListener('change', validateForm));
+
+  // Disable tombol di awal
+  window.addEventListener('DOMContentLoaded', () => {
+    submitBtn.disabled = true;
+  });
+

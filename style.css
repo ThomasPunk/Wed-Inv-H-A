@@ -159,6 +159,7 @@ body {
   padding: 0;
   height: 100vh;
   display: inline;
+  overflow: hidden;
 }
 .section:nth-child(1) h1{
   position: relative;
@@ -223,7 +224,7 @@ p {
   left: 50%;
   margin-top:7vh;
   transform: translate(-50%, 0%);
-  filter: grayscale(80%);
+  filter: grayscale(90%);
 }
 @media(max-width: 600px) {
 .backDrop{

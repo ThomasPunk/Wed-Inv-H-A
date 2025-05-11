@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<audio preload="auto" id="soundTrack" src="lagu.mp3" loop></audio>
 <div class="openingPage" id="openingPage">
   <h1>THE WEDDING OF</h1>
   <p>Hilwa & Arief</p>
@@ -151,20 +152,20 @@
     <form id="weddingForm"
     action="https://docs.google.com/forms/d/e/1FAIpQLScoo9KXy4t3FfZnstpcwc4dn5x0EkjKfjr6idWS1LuZ7ZeSLQ/formResponse" method="post" target="hiddenConfirm" onsubmit="return showThankYouMessage()">
 
-    <!-- Form Nama -->
-    <input type="text" name="entry.206889230" placeholder="Nama"><br>
+      <!-- Form Nama -->
+      <input type="text" name="entry.206889230" placeholder="Nama"><br>
 
-    <!-- Form pilihan Kehadiran-->
-    <input type="radio" id="entry.1617194257" name="entry.1617194257" value="Ya, Saya Akan Hadir" >
-    <label for="Ya, Saya Akan Hadir"> Ya, Saya Akan Hadir</label><br>
-    <input type="radio" id="entry.1617194257" name="entry.1617194257" value="Tidak, Kita Akan berjumpa dilain waktu" >
-    <label for="Tidak, Kita Akan berjumpa dilain waktu"> Tidak, Kita Akan berjumpa dilain waktu</label><br>
+      <!-- Form pilihan Kehadiran-->
+      <input type="radio" id="entry.1617194257" name="entry.1617194257" value="Ya, Saya Akan Hadir" >
+      <label for="Ya, Saya Akan Hadir"> Ya, Saya Akan Hadir</label><br>
+      <input type="radio" id="entry.1617194257" name="entry.1617194257" value="Tidak, Kita Akan berjumpa dilain waktu" >
+      <label for="Tidak, Kita Akan berjumpa dilain waktu"> Tidak, Kita Akan berjumpa dilain waktu</label><br>
 
-    <!-- Form Ucapan Selamat -->
-    <textarea type="text" name="entry.219318329" placeholder="Ucapan"></textarea><br>
-    
-    <!-- Tombol Submit -->
-    <button type="submit">Kirim</button>
+      <!-- Form Ucapan Selamat -->
+      <textarea type="text" name="entry.219318329" placeholder="Ucapan"></textarea><br>
+      
+      <!-- Tombol Submit -->
+      <button type="submit">Kirim</button>
     </Form>
 
     <iframe name="hiddenConfirm" style="display:none;"></iframe>
@@ -250,7 +251,7 @@
 
 
 </button>
-<audio id="soundTrack" src="lagu.mp3" loop></audio>
+
 <script src="script.js"></script>
 </body>
 </html>
