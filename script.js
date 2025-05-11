@@ -170,16 +170,21 @@ const audio = document.getElementById("soundTrack");
 const pausePlay = document.getElementById("pausePlay");
 const openBtn = document.getElementById('openBtn');
 const openBtnText = document.getElementById('openBtnText');
-let audioReady = false;
+// let audioReady = false;
 
 audio.load();
 
-  audio.addEventListener('canplaythrough', () => {
-    audioReady = true;
-    openBtn.style.pointerEvents = 'auto';  // aktifkan klik
-    openBtn.style.opacity = '1';           // tampilkan penuh
-    openBtnText.textContent = 'Buka Undangan'; // ganti tulisan
-  });
+
+
+audio.addEventListener('canplaythrough', () => {
+  audioReady = true;
+  openBtn.style.pointerEvents = 'auto';  // aktifkan klik
+  openBtn.style.opacity = '1';           // tampilkan penuh
+  openBtnText.textContent = 'Buka Undangan'; // ganti tulisan
+  openBtnText.classList.remove('loading'); // hapus class loading
+});
+
+
 
 function openPage(){
   if (!audioReady) {
