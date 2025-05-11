@@ -54,11 +54,12 @@ body {
   /* text-shadow: #333 0px 5px 10px; */
 }
 .openingPage p:nth-child(2){
-  font-size: 1.3rem;
-  /* font-family: "Arima","Mate", sans-serif;; */
+  font-size: 2rem;
+  margin: 0;
+  font-family: "Parisienne", cursive;
   /* font-optical-sizing: auto; */
-  /* font-weight: 300; */
-  letter-spacing: 2px;
+  font-weight: 400;
+  /* letter-spacing: 2px; */
   /* text-shadow: var(--primary-color) 0px 5px 10px; */
 }
 .openingPage p:nth-child(4){
@@ -157,29 +158,35 @@ body {
   margin:0;
   padding: 0;
   height: 100vh;
-  transform: translateY(0);
+  display: inline;
 }
 .section:nth-child(1) h1{
-  /* font-family: "Aboreto",Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
-  /* font-weight: 200; */
-  /* font-size: 1.8rem; */
-  /* margin-top:30px; */
-  /* padding:0; */
+  position: relative;
+  top: 80vh;
+  margin: 0;
+  padding: 0;  
 }
 .section:nth-child(1) p{
-    /* font-family: "Moon Dance",Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
-    /* font-size: 2rem; */
-    /* margin: 0; */
-    /* padding: 0; */
+  position: relative;
+  top: 80vh;
+  margin: 0;
+  padding: 0;
 }
 /* pengaturan untuk section 2 */
 .section:nth-child(2) {
   background: transparent; 
 }
 .section:nth-child(2) p{
-  font-size: 0.8rem;
+  font-size: 1rem;
   text-align: center;
-  margin: 0px 5vw 0px 5vw;
+  margin: 0px 20vw;
+}
+
+@media(max-width: 600px) {
+  .section:nth-child(2) p{
+    font-size: 0.8rem;
+    margin: 0px 5vw;
+  }
 }
 
 .section.show {
@@ -208,10 +215,16 @@ p {
 }
 
 /* Pengaturan khusus untuk gambar Section no.1 */
-/* .section:nth-child(1) img{
-  height: 46vh;
-  opacity: 1;  
-} */
+.section:nth-child(1) img{
+  height: 70vh;
+  opacity: 0.4;
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  margin-top:7vh;
+  transform: translate(-50%, 0%);
+  filter: grayscale(80%);
+}
 @media(max-width: 600px) {
 .backDrop{
   position: absolute;
@@ -270,14 +283,7 @@ div.inCard{
   z-index: 1;
   background-image: linear-gradient(to top, var(--primary-color) 1%, 40% , transparent 100%);
 }
-.card p{
-  text-align: center;
-  font-size: 1rem;
-  margin-top: 10px;
-  position: absolute;
-  bottom: 5px;
-  z-index: 2;
-}
+
 .section:nth-child(3) h2{
   font-size: 1.3rem;
   font-weight: lighter;
@@ -286,10 +292,26 @@ div.inCard{
   margin-bottom: 0;
 }
 .section:nth-child(3) p{
-  font-size: .8rem;
+  font-size: 1rem;
   width: 90vw;
 }
+@media(max-width: 600px) {
+ .section:nth-child(3) p{
+  font-size: .8rem;
+  width: 90vw;
+ }
+}
 
+#initial{
+  font-family: "Parisienne", cursive;
+  text-align: center;
+  font-size: 1.5rem ;
+  margin-top: 10px;
+  position: absolute;;
+  bottom: 0px;
+  z-index: 2;
+  text-shadow: #ffffff 0px 0px 20px;
+}
 /* pengaturan Section 4 */
 .section:nth-child(4) {
   background: transparent;
@@ -415,13 +437,13 @@ div.inCard{
   overflow: hidden;
   animation: autoRun linear infinite;
   animation-duration: 16s;
-  animation-delay: calc(16s * var(--position) / 143.5 ); 
+  animation-delay: calc(16s * var(--position) / 269.7 ); 
 
 }
 @media(max-width: 600px) {
   .slider .item{
     animation: autoRun 16s linear infinite;
-    animation-delay: calc(16s * var(--position) / 143.5 ); 
+    animation-delay: calc(16s * var(--position) / 269.7 ); 
   }
 }
 .slider .item img{
@@ -433,7 +455,7 @@ div.inCard{
     transform:translateX(90vw);
   }
   to{
-    transform: translateX(calc(90vw - 143.5vh)); 
+    transform: translateX(calc(90vw - 269.7vh)); 
   }
 }
 .slider:hover .item{
@@ -731,18 +753,36 @@ button:active{
 }
 .itemClick {
   display: flex;
-  height: auto;
+  height: 100vh;
   width: auto;
   max-height: 600px;
   margin: 10px;
-  border-radius: 10px;
+  flex-shrink: 0;  
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+.forShadow{
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  flex-shrink: 0;
+  border-radius: 10px;
   overflow: hidden;
+  height: auto;
+  width: auto;
+  display: flex;
+  flex-shrink: 0;  
+  cursor: pointer;
 }
 .itemClick img{
   height: 70vh;
   max-height: 600px;
+  
+}
+.itemClick p{
+  font-family: "Parisienne", cursive;
+  font-size: 1.2rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin: 0;
 }
 .itemClick.active {
   background-color: #FF5733;
