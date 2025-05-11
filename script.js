@@ -170,14 +170,28 @@ const audio = document.getElementById("soundTrack");
 const pausePlay = document.getElementById("pausePlay");
 const openBtn = document.getElementById('openBtn');
 const openBtnText = document.getElementById('openBtnText');
+let audioReady = false;
 
-audio.addEventListener('canplaythrough', () => {
+  // Animasi titik-titik loading
+  let dotCount = 0;
+  const loadingInterval = setInterval(() => {
+  dotCount = (dotCount + 1) % 4;
+  openBtnText.textContent = 'Loading' + '.'.repeat(dotCount);
+}, 500);
+
+  audio.addEventListener('canplaythrough', () => {
+    audioReady = true;
+    clearInterval(loadingInterval); // stop animasi loading
     openBtn.style.pointerEvents = 'auto';  // aktifkan klik
     openBtn.style.opacity = '1';           // tampilkan penuh
     openBtnText.textContent = 'Buka Undangan'; // ganti tulisan
   });
 
 function openPage(){
+  if (!audioReady) {
+    return;  // Pastikan audio sudah siap diputar
+  }
+  else{
   openingPage.classList.add('hidden');
   container.classList.remove('hidden');  
   
@@ -194,7 +208,8 @@ function openPage(){
     elem.msRequestFullscreen();
   }
 
-} 
+  }
+}
 
 //Pengaturan Show Gallery
   const galleryClick = document.querySelector('.galleryClick');
