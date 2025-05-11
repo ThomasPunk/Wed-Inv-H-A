@@ -11,7 +11,8 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<audio preload="auto" id="soundTrack" src="lagu.mp3" loop></audio>
+<audio id="soundTrack" src="lagu.mp3" loop></audio>
+
 <div class="openingPage" id="openingPage">
   <h1>THE WEDDING OF</h1>
   <p>Hilwa & Arief</p>
@@ -20,9 +21,9 @@
   </div>
   <p>Kepada</p>
   <h2 class="textScene0"><span id="nama"></span></h2>
-  <div class="openingPageButton" onclick="openPage()">
+  <div class="openingPageButton" id="openBtn" onclick="openPage()">
     <img src="img6.png" alt="icon surat" class="iconSurat" style="height: 1.5rem;">
-    Buka Undangan
+    <span id="openBtnText">Loading...</span>
   </div>
 </div>
 

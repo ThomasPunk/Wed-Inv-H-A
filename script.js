@@ -168,6 +168,14 @@ const openingPage = document.getElementById('openingPage');
 const container = document.getElementById('container');
 const audio = document.getElementById("soundTrack");
 const pausePlay = document.getElementById("pausePlay");
+const openBtn = document.getElementById('openBtn');
+const openBtnText = document.getElementById('openBtnText');
+
+audio.addEventListener('canplaythrough', () => {
+    openBtn.style.pointerEvents = 'auto';  // aktifkan klik
+    openBtn.style.opacity = '1';           // tampilkan penuh
+    openBtnText.textContent = 'Buka Undangan'; // ganti tulisan
+  });
 
 function openPage(){
   openingPage.classList.add('hidden');
