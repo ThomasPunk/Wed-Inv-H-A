@@ -368,6 +368,10 @@ div.inCard{
   margin-right: 10px;
   vertical-align: middle;
 }
+#keluarga{
+  margin: 0px;
+  font-size: .8rem;
+}
 .resepsi{
   padding-top: 30px;
 }
